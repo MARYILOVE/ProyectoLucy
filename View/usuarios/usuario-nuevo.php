@@ -4,7 +4,7 @@
   <li><a href="?c=operacion">Usuarios</a></li>
   <li class="active">Crear usuario</li>
 </ol>
-<form id="frm-operacion" action="?c=operacion&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-nuevousuario" action="?c=usuarios&a=Guardar" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
       

@@ -18,18 +18,6 @@
         <label>consumo</label>
        <input type="text" name="em_consumo" value="<?php echo $mat->em_consumo; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
 
-    </div> 
-    <div class="col-xs-6">
-           <label>Unidad de medida</label>
-                  <select name="medida" class="form-control">
-                         <option <?php echo $mat->um_id; ?> selected>Seleccione Unidad de medida</option>
-                                 <?php
-                                       foreach($this->model->GetEstado() as $row){
-                                          echo "<option value='".$row['um_id']."'>".$row['matp_descripcion']."</option>";
-                                       }
-                                  ?>
-                  </select>
-      </div>   
     <div class="col-xs-6">
         <label>despiese</label>
        <input type="text" name="em_factor_desperdicio" value="<?php echo $mat->em_factor_desperdicio; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
@@ -70,22 +58,12 @@
                                        }
                                   ?>
                   </select>
-      </div>  
-      <div  class="col-xs-6">
-        <label>Factor de desperdicio</label>
-      <input type="text" name="em_factor_desperdicio" value="<?php echo $mat->em_factor_desperdicio; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
-      </div>
-     <div class="col-xs-6">
-           <label>Color</label>
-                  <select name="color" class="form-control">
-                         <option <?php echo $mat->color; ?> selected>Seleccione Color</option>
-                                 <?php
-                                       foreach($this->model->GetColor() as $row){
-                                          echo "<option value='".$row['col_id']."'>".$row['col_descripcion']."</option>";
-                                       }
-                                  ?>
-                  </select>
       </div> 
+    </div> 
+   <div class="col-xs-6">
+        <label>despiese</label>
+       <input type="text" name="em_estado" value="<?php echo $mat->em_estado; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+    </div>
       
         <div class="text-right" style="clear:left; padding-top:25px;">
             <button class="btn btn-success" type="submit">Guardar</button>

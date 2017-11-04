@@ -31,22 +31,15 @@ class MaterialesController{
 
         $data=array(
                     
-                    'matp_id'=>"'".$_POST['matp_id']."'",
-          
-                    'matp_descripcion'=>"'".$_POST['matp_descripcion']."'",
-          
-                    'um_id'=>"'".$_POST['um_id']."'",
-          
+                    'em_id'=>"'".$_POST['em_id']."'",
                     'em_consumo'=>"'".$_POST['em_consumo']."'",
-          
                     'em_factor_desperdicio'=>"'".$_POST['em_factor_desperdicio']."'",
-          
                     'em_consumo_real'=>"'".$_POST['em_consumo_real']."'",
-          
                     'em_costo'=>"'".$_POST['em_costo']."'",
-          
-                    'em_costo_total	'=>"'".$_POST['em_costo_total']."'",
-                    'col_id'=>"'".$_POST['col_id']."'",
+                    'em_costo_total'=>"'".$_POST['em_costo_total']."'",
+                    'matp_id'=>"'".$_POST['matp_id']."'",
+                    'pro_id'=>"'".$_POST['pro_id']."'",
+                    'em_estado'=>"'".$_POST['em_estado']."'",
                     
                     
           
