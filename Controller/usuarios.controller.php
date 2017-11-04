@@ -18,7 +18,7 @@ class UsuariosController{
         require_once 'View/template/footer.php';
     }
     public function Nuevo(){
-        $opr = new Usuarios();
+        $usu = new Usuarios();
 
         require_once 'View/template/header.php';
         require_once 'View/template/menuInst.php'; 

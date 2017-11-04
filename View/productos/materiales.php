@@ -9,18 +9,13 @@
 
     <div class="form-group">      
       
-   <div class="col-xs-6" style="clear:left;">
-        <label>Codigo</label>
-        <input type="text" name="em_id" value="<?php echo $mat->em_id; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:20" />
-
-    </div>  
       <div class="col-xs-6">
         <label>consumo</label>
        <input type="text" name="em_consumo" value="<?php echo $mat->em_consumo; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
-
+    </div>
     <div class="col-xs-6">
-        <label>despiese</label>
-       <input type="text" name="em_factor_desperdicio" value="<?php echo $mat->em_factor_desperdicio; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+        <label>Factor Desperdicio</label>
+       <input type="number" name="em_factor_desperdicio" value="<?php echo $mat->em_factor_desperdicio; ?>" class="form-control" placeholder="10" data-validacion-tipo="requerido|min:100" />
     </div>
    
       <div class="col-xs-6">
@@ -38,18 +33,18 @@
       </div>
       
        <div class="col-xs-6">
-           <label>medida</label>
+           <label>Materia Prima</label>
                   <select name="medida" class="form-control">
-                         <option <?php echo $mat->matp_id; ?> selected>Seleccione Unidad de medida</option>
+                         <option <?php echo $mat->matp_id; ?> selected>Seleccione materia prima</option>
                                  <?php
-                                       foreach($this->model->GetMedida() as $row){
+                                       foreach($this->model->GetMateria() as $row){
                                           echo "<option value='".$row['matp_id']."'>".$row['matp_descripcion']."</option>";
                                        }
                                   ?>
                   </select>
       </div>   
        <div class="col-xs-6">
-           <label>pro</label>
+           <label>Unidad Medida</label>
                   <select name="medida" class="form-control">
                          <option <?php echo $mat->pro_id; ?> selected>Seleccione Unidad de medida</option>
                                  <?php
@@ -59,10 +54,20 @@
                                   ?>
                   </select>
       </div> 
-    </div> 
    <div class="col-xs-6">
-        <label>despiese</label>
-       <input type="text" name="em_estado" value="<?php echo $mat->em_estado; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+           <label>Color</label>
+                  <select name="medida" class="form-control">
+                         <option <?php echo $mat->col_id; ?> selected>Seleccione color</option>
+                                 <?php
+                                       foreach($this->model->GetColor() as $row){
+                                          echo "<option value='".$row['col_id']."'>".$row['col_descripcion']."</option>";
+                                       }
+                                  ?>
+                  </select>
+      </div>   
+   <div class="col-xs-6">
+        <label>Descripcion</label>
+       <input type="text" name="descripcion" value="<?php echo $mat->descripcion; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
     </div>
       
         <div class="text-right" style="clear:left; padding-top:25px;">

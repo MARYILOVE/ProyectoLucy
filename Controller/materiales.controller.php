@@ -22,7 +22,7 @@ class MaterialesController{
 
         require_once 'View/template/header.php';
         require_once 'View/template/menuInst.php'; 
-        require_once 'View/productos/productos_nuevos.php';
+        require_once 'View/productos/materiales.php';
         require_once 'View/template/footer.php';
     }
    public function Guardar(){
@@ -40,10 +40,6 @@ class MaterialesController{
                     'matp_id'=>"'".$_POST['matp_id']."'",
                     'pro_id'=>"'".$_POST['pro_id']."'",
                     'em_estado'=>"'".$_POST['em_estado']."'",
-                    
-                    
-          
-          
                    );
      
         $this->model->RegistrarMateriales($data);

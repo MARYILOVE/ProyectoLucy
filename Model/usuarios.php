@@ -3,12 +3,14 @@ require_once "database.php";
 class Usuarios  {
 	  protected $conexion;
 
-    public $codoperacion;
-    public $descripcion;
-    public $tiempoopr;
-    public $puntada;
-    public $maquina;
-    public $ajuste;
+    public $documento;
+    public $nombre;
+    public $apellido;
+    public $papellido;
+    public $sapellido;
+    public $email;
+    public $formacion;
+    public $contrasena;
 
 	public function __CONSTRUCT()
 	{
@@ -22,8 +24,8 @@ class Usuarios  {
     $sql = "INSERT INTO lu_operaciones($columns) VALUES ($values)";
     return $this->conexion->ejecutarSql($sql);
   }
-  public function GetMaquinas(){
-     $sql="SELECT * FROM lu_maquina";
+  public function GetFicha(){
+     $sql="SELECT lucy_ficha.*,lucy_programa.prog_nombre FROM lucy_ficha INNER JOIN lucy_programa ON lucy_programa.prog_id=lucy_ficha.prog_id";
     $result= $this->conexion->ejecutarSql($sql);
 				if($result->num_rows > 0){
              	while($rows=$result->fetch_assoc()){
@@ -33,8 +35,30 @@ class Usuarios  {
        return $res;
 			}
   }
-	public function Getoperaciones($codigo){
-     $sql="SELECT * FROM lu_operaciones WHERE oprcod='".$codigo."'";
+	public function GetTiPersona(){
+     $sql="SELECT * FROM lucy_tipo_persona ";
+    $result= $this->conexion->ejecutarSql($sql);
+				if($result->num_rows > 0){
+             	while($rows=$result->fetch_assoc()){
+			      $res[]=$rows;
+             
+			    }		
+       return $res;
+			}
+  }	
+	public function GetTiIden(){
+     $sql="SELECT * FROM lucy_tipo_identificacion ";
+    $result= $this->conexion->ejecutarSql($sql);
+				if($result->num_rows > 0){
+             	while($rows=$result->fetch_assoc()){
+			      $res[]=$rows;
+             
+			    }		
+       return $res;
+			}
+  }
+	public function GetCiudad(){
+     $sql="SELECT * FROM lucy_ciudad ";
     $result= $this->conexion->ejecutarSql($sql);
 				if($result->num_rows > 0){
              	while($rows=$result->fetch_assoc()){
