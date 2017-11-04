@@ -21,11 +21,11 @@ class Usuarios  {
 	    $this->conexion = new Conectar();
      
 	}
-  public function RegistrarOperacion($data){
+  public function RegistrarPersona($data){
     $columns = implode(", ", array_keys($data));
     $values  = implode(", ", array_values($data));
 
-    $sql = "INSERT INTO lu_operaciones($columns) VALUES ($values)";
+    $sql = "INSERT INTO lucy_persona($columns) VALUES ($values)";
     return $this->conexion->ejecutarSql($sql);
   }
   public function GetFicha(){

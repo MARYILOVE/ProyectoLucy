@@ -4,16 +4,20 @@
   <li><a href="?c=usuarios">Usuarios</a></li>
   <li class="active">Crear usuario</li>
 </ol>
-<form id="frm-nuevousuario" action="?c=usuarios&a=Guardar" method="post" enctype="multipart/form-data">
+<form id="frm-nuevousuario" action="?c=usuarios&a=GuardarDatos" method="post" enctype="multipart/form-data">
 
     <div class="form-group"> 
       <div class="col-xs-6">
         <label>Nombres</label>
        <input type="text" name="nombre" value="<?php echo $usu->nombre; ?>" class="form-control" placeholder="Nombre" data-validacion-tipo="requerido|min:20" />
     </div> 
+       <div class="col-xs-6">
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" value="<?php echo $usu->apellido; ?>" class="form-control" placeholder="Apellidos" data-validacion-tipo="requerido|min:20" />
+    </div>
     <div class="col-xs-6">
         <label>Tipo Documento</label>
-        <select name="documento" class="form-control">
+        <select name="tdocumento" class="form-control">
           <option <?php echo $usu->tdocumento; ?> selected>Seleccione Tipo documento</option>
           <?php
            foreach($this->model->GetTiIden() as $row){
@@ -27,14 +31,14 @@
         <label>numero de documento</label>
        <input type="number" name="cedula" value="<?php echo $usu->documento ?>" class="form-control" placeholder="cedula" data-validacion-tipo="requerido|min:100" />
     </div>
-   <div class="col-xs-6">
-        <label>Apellidos</label>
-        <input type="text" name="apellidos" value="<?php echo $usu->apellido; ?>" class="form-control" placeholder="Apellidos" data-validacion-tipo="requerido|min:20" />
-    </div>
-      
+   
       <div class="col-xs-6">
         <label>Telefono</label>
        <input type="text" name="telefono" value="<?php echo $usu->telefono; ?>" class="form-control" placeholder="Telefono" data-validacion-tipo="requerido|min:100" />
+    </div> 
+    <div class="col-xs-6">
+        <label>Direccion</label>
+       <input type="text" name="direccion" value="<?php echo $usu->direccion; ?>" class="form-control" placeholder="Direccion" data-validacion-tipo="requerido|min:100" />
     </div> 
       
       <div  class="col-xs-6">

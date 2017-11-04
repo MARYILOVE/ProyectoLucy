@@ -26,23 +26,30 @@ class UsuariosController{
         require_once 'View/usuarios/usuario-nuevo.php';
         require_once 'View/template/footer.php';
     }
-   public function EnviarSolicitud(){
+   public function GuardarDatos(){
         $opr = new Usuarios();
          require_once 'Helper/usuarios/usuarios_helper.php';  
         $dataPersona=array(
-                    'per_id'=>"'".$_POST['codoperacion']."'",
-                    'per_nombre'=>"'".$_POST['descripcion']."'",
-                    'per_apellido'=>"'".$_POST['tiempoopr']."'",
-                    'per_telefono'=>"'".$_POST['puntada']."'",
-                    'per_direccion'=>"'".$_POST['maquina']."'",
-                    'per_correo'=>"'".$_POST['ajuste']."'" ,                  
-                    'tii_id'=>"'".$_POST['ajuste']."'" ,                  
-                    'Tper_id'=>"'".$_POST['ajuste']."'" ,                  
-                    'ciu_id'=>"'".$_POST['ajuste']."'" ,                  
+                    'per_id'=>"'".$_POST['cedula']."'",
+                    'per_nombre'=>"'".$_POST['nombre']."'",
+                    'per_apellido'=>"'".$_POST['apellidos']."'",
+                    'per_telefono'=>"'".$_POST['telefono']."'",
+                    'per_direccion'=>"'".$_POST['direccion']."'",
+                    'per_correo'=>"'".$_POST['email']."'" ,                  
+                    'tii_id'=>"'".$_POST['tdocumento']."'" ,                  
+                    'Tper_id'=>"'".$_POST['tpersona']."'" ,                  
+                    'ciu_id'=>"'".$_POST['ciudad']."'" ,                  
                     'per_estado'=>1,                  
                    );
-        $this->model->RegistrarPersona($data);
+        $this->model->RegistrarPersona($dataPersona);
      
-        header('Location: index.php?c=operacion');
+        header('Location: index.php?c=usuarios');
     }
 }
+
+//ficha
+
+
+
+
+
