@@ -4,13 +4,17 @@ class Usuarios  {
 	  protected $conexion;
 
     public $documento;
+    public $tdocumento;
     public $nombre;
     public $apellido;
-    public $papellido;
-    public $sapellido;
+    public $telefono;
+    public $direccion;
     public $email;
     public $formacion;
     public $contrasena;
+    public $ficha;
+    public $tpersona;
+    public $ciudad;
 
 	public function __CONSTRUCT()
 	{

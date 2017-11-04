@@ -28,5 +28,16 @@ class Conectar
 		return $respuesta;
 		$this->cerrarConexion();	 
 	}
+	public function ultimoReg($sql)
+    {
+        $this->openCon();
+        $respuesta = $this->conexion->query($sql);
+        if (!$respuesta) {
+            $respuesta = mysqli_errno($this->conexion);
+        }
+
+        return $this->conexion->insert_id;
+				$this->cerrarConexion();
+    }
    
 }
