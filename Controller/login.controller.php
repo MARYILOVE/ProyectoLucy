@@ -8,29 +8,21 @@ require_once 'Model/login.php';
 
 
 class LoginController{
-
   
-
    private $model;
-
-
-    public function __CONSTRUCT(){
+    
+  public function __CONSTRUCT(){
 
        $this->model = new Login();
-
-      
-
-    }
-
-   
+  }
 
     public function Index(){
 
         require_once 'View/template/header.php';
         require_once 'View/login/iniciarSesion.php';
         require_once 'View/template/footer.php';
-
     }
+  
   public function IniciarSesion(){
       $usuario=$_POST['usuario'];
       $password=$_POST['password'];
@@ -43,7 +35,6 @@ class LoginController{
       }
   }
   
-
   public function cerrarSesion() {
 
         if (isset($_SESSION["nombre_usuario"]))  {

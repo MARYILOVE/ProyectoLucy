@@ -14,6 +14,7 @@
       <label>Ingerese Contraseña</label>
       <input type="password" name="password" class="form-control" >
    <button type="submit" name="Ingresar" class="btn btn-success">Iniciar Sesion</button>
-  </form> 
+   <a class="btn btn-success" href="?c=usuarios1&a=nuevo">Solicitar</a>
   
+  </form> 
 </div>

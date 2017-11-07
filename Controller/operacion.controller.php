@@ -64,4 +64,13 @@ class OperacionController{
      
        header('Location: index.php?c=operacion');
     }
+
+   public function Listaroperaciones(){
+        $opr = new Operacion();
+        require_once 'View/template/header.php';
+        require_once 'View/template/menuInst.php'; 
+        require_once 'View/operacion/operacion-consultar.php';
+        require_once 'View/template/footer.php';       
+     
+        }
 }

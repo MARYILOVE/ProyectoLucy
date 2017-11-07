@@ -54,4 +54,17 @@ class Operacion  {
 		return $this->conexion->ejecutarSql($sql);
 		
 	}
-}  
+
+public function ListarOperaciones(){
+  $sql="SELECT lucy_operaciones .*, lucy_maquina.maq_descripcion from lucy_operaciones INNER JOIN lucy_maquina ON lucy_maquina.maq_id=lucy_operaciones.maq_id";
+  //$sql="SELECT * FROM lucy_operaciones";
+		 $result= $this->conexion->ejecutarSql($sql);
+				if($result->num_rows > 0){
+             	while($rows=$result->fetch_assoc()){
+			      $res[]=$rows;
+             
+			    }		
+       return $res;
+			}
+  }
+}	

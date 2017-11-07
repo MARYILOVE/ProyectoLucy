@@ -16,7 +16,7 @@
     </div>  
       <div class="col-xs-6">
         <label>Precio Unidad </label>
-       <input type="text" name="pro_precio_unidad" value="<?php echo $opr->pro_precio_unidad; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
+       <input type="number" name="pro_precio_unidad" value="<?php echo $opr->pro_precio_unidad; ?>" class="form-control" placeholder="" data-validacion-tipo="requerido|min:100" />
 
     </div> 
       <div class="col-xs-6">

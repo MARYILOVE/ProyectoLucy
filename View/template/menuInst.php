@@ -6,6 +6,7 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">INICIO</a></li>
       <li><a href="?c=usuarios">USUARIOS</a></li>
+			<li><a href="?c=usuarios1">SOLICITAR</a></li>
       <li><a href="?c=operacion">OPERACION</a></li>
       <li><a href="?c=productos">PRODUCTOS</a></li>
 			 
