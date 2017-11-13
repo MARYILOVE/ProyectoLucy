@@ -3,9 +3,5 @@
     <a class="btn btn-primary" href="?c=operacion&a=Nuevo">Nuevo Operacion</a>
     <a class="btn btn-primary" href="?c=operacion&a=Listaroperaciones">Listar Operacion</a>
   
-  <table class="table">
-    <tr>
-      <td> Consulta</td>
-    </tr>
-  </table>
+ 
 </div>

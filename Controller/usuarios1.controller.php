@@ -30,6 +30,14 @@ class Usuarios1Controller{
         $opr = new Usuarios1();
          require_once 'Helper/usuarios1/usuarios_helper.php';
      
+        if(empty($_REQUEST['nombre']) or $_REQUEST['nombre'] = ""){
+            echo "campo nombre vacio";
+        }else{
+            echo "campo lleno";
+        }
+     
+        die();
+     
         $dataPersona=array(
           
                     'per_id'=>"'".$_POST['cedula']."'",

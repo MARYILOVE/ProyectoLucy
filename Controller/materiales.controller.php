@@ -14,7 +14,7 @@ class MaterialesController{
     public function Index(){
         require_once 'View/template/header.php';
         require_once 'View/template/menuInst.php'; 
-        require_once 'View/productos/productos.php';
+        require_once 'View/materiales/materiales.php';
         require_once 'View/template/footer.php';
     }
     public function Nuevo(){
@@ -22,7 +22,7 @@ class MaterialesController{
 
         require_once 'View/template/header.php';
         require_once 'View/template/menuInst.php'; 
-        require_once 'View/productos/materiales.php';
+        require_once 'View/materiales/materiales-nuevo.php';
         require_once 'View/template/footer.php';
     }
    public function Guardar(){
@@ -31,19 +31,25 @@ class MaterialesController{
 
         $data=array(
                     
-                    'em_id'=>"'".$_POST['em_id']."'",
-                    'em_consumo'=>"'".$_POST['em_consumo']."'",
-                    'em_factor_desperdicio'=>"'".$_POST['em_factor_desperdicio']."'",
-                    'em_consumo_real'=>"'".$_POST['em_consumo_real']."'",
-                    'em_costo'=>"'".$_POST['em_costo']."'",
-                    'em_costo_total'=>"'".$_POST['em_costo_total']."'",
-                    'matp_id'=>"'".$_POST['matp_id']."'",
-                    'pro_id'=>"'".$_POST['pro_id']."'",
-                    'em_estado'=>"'".$_POST['em_estado']."'",
+                    'matp_id'=>"'".$_POST['codigoMaterial']."'",
+                    'matp_descripcion'=>"'".$_POST['descripcion']."'",
+                    'matp_img'=>"'".$_POST['imagen']."'",
+                    'matp_estado'=>"'".$_POST['estado']."'",
+                    'um_id'=>"'".$_POST['unidad']."'",
+                    'col_id'=>"'".$_POST['color']."'"              
                    );
      
-        $this->model->RegistrarMateriales($data);
-     
-        header('Location: index.php?c=productos');
+         $this->model->RegistrarMateriales($data);
+        // header('Location: index.php?c=materiales');
     }
+  public function consultarCodigo(){
+     $data= $this->model->consultarCodigo($_POST['codigo']);
+    echo "respuesta=".count($data);
+    if(count($data)!=0){
+      echo "El codigo esta repertido";
+    }else{
+      echo 1;
+    }
+    
+  }
 }

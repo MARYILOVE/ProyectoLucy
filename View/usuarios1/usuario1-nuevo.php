@@ -4,13 +4,13 @@
   <li><a href="?c=usuarios1">Usuarios</a></li>
   <li class="active">Crear usuario</li>
 </ol>
-<form id="frm-nuevousuario" action="?c=usuarios&a=GuardarDatos" method="post" enctype="multipart/form-data">
+<form id="frm-nuevousuario" action="?c=usuarios1&a=GuardarDatos" method="post" enctype="multipart/form-data">
    
   <div class="form-group">
       <div class="row">
           <div class="col-xs-6">
-              <label for="name" >Nombres</label>
-              <input type="text" id="name" name="nombre" value="<?php echo $usu->nombre; ?>" class="form-control" placeholder="Nombre" data-validacion-tipo="requerido|min:20" />            
+              <label for="nombre" >Nombres</label>
+              <input type="text" id="nombre" name="nombre" value="<?php echo $usu->nombre; ?>" class="form-control" placeholder="Nombre"/>            
           </div>
           <div class="col-xs-6">
                <label>Apellidos</label>
@@ -101,7 +101,11 @@
            </div>
            <div class="col-xs-6">
                 <label>Genero</label>
-                <input type="text" name="genero" value="<?php echo $usu->genero; ?>" class="form-control" placeholder="Genero" data-validacion-tipo="requerido|min:100" />
+                <select class="form-control" id="genero" name="genero">
+                    <option selected>Seleccione un genero</option>
+                    <option>Femenino</option>
+                    <option>Masculino</option>
+                </select>
            </div>
       </div>
       <div class="row">
@@ -116,3 +120,4 @@
   ?>
 </form>
 </div> 
+  <script src="../assets/js/librerias_js/validationForms.js"></script>
